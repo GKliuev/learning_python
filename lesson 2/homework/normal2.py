@@ -44,8 +44,15 @@ mounth = ['',
           'октября',
           'ноября',
           'декабря']
-data = input('Введите дату в формате dd.mm.yyyy : ')
-# data = ('02.11.2019')
-data = data.split('.')
+# data = input('Введите дату в формате dd.mm.yyyy : ')
+data = ('02.11.2019')
+# my solution
+# data = data.split('.')
+# print(f'{day[int(data[0])]} {mounth[int(data[1])]} {data[2]} года.')
 
-print(f'{day[int(data[0])]} {mounth[int(data[1])]} {data[2]} года.')
+# teacher solution
+d, m, y = data.split('.')
+d = int(d)
+m = int(m)
+y = int(y)
+print(day[d], mounth[m], y, 'года')
