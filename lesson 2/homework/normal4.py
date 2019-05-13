@@ -7,7 +7,7 @@ lst = [1, 2, 4, 5, 6, 2, 5, 2]
 # универсальный метод
 lst_new = []
 for i in lst:
-    if i not in n:
-        n.append(i)
+    if i not in lst_new:
+        lst_new.append(i)
 
 print(lst_new)
