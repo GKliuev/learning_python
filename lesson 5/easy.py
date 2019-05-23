@@ -51,3 +51,46 @@ if __name__ == '__main__':
 print()
 print(30 * "-")
 print()
+
+# Задача-2:
+# Напишите скрипт, отображающий папки текущей директории.
+if __name__ == '__main__':
+    print("Задача 2: \n")
+
+
+def list_dir():
+    buffer = os.listdir()
+    print('****************************************')
+    print('Список файлов:')
+    for index, element in enumerate(buffer, start=1):
+        if os.path.isdir(element):
+            print('{}. {}'.format(index, element))
+
+
+if __name__ == '__main__':
+    list_dir()
+
+print()
+print(30 * "-")
+print()
+
+# Задача-3:
+# Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
+if __name__ == '__main__':
+    print("Задача 3: \n")
+
+import shutil
+
+
+def current_file_copy():
+    name_file = os.path.realpath(__file__)
+    new_file = name_file + '.copy'
+    if os.path.isfile(new_file) != True:
+        shutil.copy(name_file, new_file)
+        return new_file + ' - создан'
+    else:
+        return 'Файл уже скопирован'
+
+
+if __name__ == '__main__':
+    print(current_file_copy())
